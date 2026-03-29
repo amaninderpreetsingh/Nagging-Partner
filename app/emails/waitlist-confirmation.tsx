@@ -38,7 +38,7 @@ export default function WaitlistConfirmation({
         </p>
       </div>
 
-      {/* Position badge */}
+      {/* Confirmation */}
       <div
         style={{
           textAlign: "center",
@@ -50,19 +50,14 @@ export default function WaitlistConfirmation({
         }}
       >
         <p
-          style={{ fontSize: "14px", color: "#A1A1A1", margin: "0 0 8px" }}
-        >
-          Your position
-        </p>
-        <p
           style={{
-            fontSize: "48px",
-            fontWeight: 700,
-            color: "#FF6B35",
+            fontSize: "18px",
+            fontWeight: 600,
+            color: "#FAFAFA",
             margin: 0,
           }}
         >
-          #{position}
+          You&apos;re on the list. We&apos;ll send you an access code when we launch.
         </p>
       </div>
 

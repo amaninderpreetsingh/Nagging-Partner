@@ -44,13 +44,12 @@ export default function SuccessState({
         You&apos;re in! 🎉
       </h3>
 
-      <div className="my-4">
-        <p className="text-sm text-text-secondary mb-1">Your position</p>
-        <p className="text-4xl font-bold text-accent">#{position}</p>
-      </div>
+      <p className="text-text-secondary my-4">
+        You&apos;re on the list. We&apos;ll send you an access code when we launch.
+      </p>
 
       <p className="text-sm text-text-secondary mb-4">
-        Share your link — every friend who joins moves you up.
+        Share your link — get your friends on the list too.
       </p>
 
       {/* Share buttons */}
