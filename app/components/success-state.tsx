@@ -1,0 +1,93 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "motion/react";
+
+interface SuccessStateProps {
+  position: number;
+  referralCode: string;
+  referralUrl: string;
+}
+
+export default function SuccessState({
+  position,
+  referralUrl,
+}: SuccessStateProps) {
+  const [copied, setCopied] = useState(false);
+
+  const shareMessage = `I just joined the waitlist for an app that nags your partner as a Drunk Irish Guy. Get on the list: ${referralUrl}`;
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(referralUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const shareLinks = {
+    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(shareMessage)}`,
+    sms: `sms:?body=${encodeURIComponent(shareMessage)}`,
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="text-center"
+    >
+      <h3
+        className="text-2xl font-bold text-text-primary mb-2"
+        tabIndex={-1}
+        autoFocus
+      >
+        You&apos;re in! 🎉
+      </h3>
+
+      <div className="my-4">
+        <p className="text-sm text-text-secondary mb-1">Your position</p>
+        <p className="text-4xl font-bold text-accent">#{position}</p>
+      </div>
+
+      <p className="text-sm text-text-secondary mb-4">
+        Share your link — every friend who joins moves you up.
+      </p>
+
+      {/* Share buttons */}
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+        <a
+          href={shareLinks.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm text-text-primary hover:bg-surface-hover transition-colors"
+          aria-label="Share on Twitter"
+        >
+          𝕏 Twitter
+        </a>
+        <a
+          href={shareLinks.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm text-text-primary hover:bg-surface-hover transition-colors"
+          aria-label="Share on WhatsApp"
+        >
+          💬 WhatsApp
+        </a>
+        <a
+          href={shareLinks.sms}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm text-text-primary hover:bg-surface-hover transition-colors"
+          aria-label="Share via iMessage"
+        >
+          💬 iMessage
+        </a>
+        <button
+          onClick={handleCopy}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm text-text-primary hover:bg-surface-hover transition-colors cursor-pointer"
+          aria-label="Copy referral link"
+        >
+          {copied ? "✓ Copied!" : "📋 Copy Link"}
+        </button>
+      </div>
+    </motion.div>
+  );
+}

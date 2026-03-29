@@ -1,10 +1,12 @@
 import NotificationPreview from "./notification-preview";
+import WaitlistForm from "./waitlist-form";
 
 interface HeroSectionProps {
   waitlistCount: number;
+  referralCode?: string;
 }
 
-export default function HeroSection({ waitlistCount }: HeroSectionProps) {
+export default function HeroSection({ waitlistCount, referralCode }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center py-12 md:py-20">
       <div className="w-full max-w-[1200px] mx-auto px-6">
@@ -28,28 +30,11 @@ export default function HeroSection({ waitlistCount }: HeroSectionProps) {
               AI persona. They get nagged until it&apos;s done.
             </p>
 
-            {/* Form placeholder — will be replaced with WaitlistForm */}
-            <div id="waitlist-form-hero" className="flex flex-col gap-3">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 h-12 px-4 rounded-lg bg-surface border border-border text-text-primary placeholder:text-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
-                />
-                <button className="h-12 px-6 rounded-lg bg-accent hover:bg-accent-hover text-white font-semibold transition-colors whitespace-nowrap cursor-pointer">
-                  Get Early Access
-                </button>
-              </div>
-              {waitlistCount > 0 && (
-                <p className="text-sm text-text-secondary">
-                  Join{" "}
-                  <span className="text-text-primary font-semibold">
-                    {waitlistCount.toLocaleString()}
-                  </span>{" "}
-                  others on the waitlist
-                </p>
-              )}
-            </div>
+            <WaitlistForm
+              variant="hero"
+              waitlistCount={waitlistCount}
+              referralCode={referralCode}
+            />
           </div>
 
           {/* Right: Notification Preview */}
