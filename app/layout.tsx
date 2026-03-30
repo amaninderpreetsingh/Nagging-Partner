@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "The Nagging Partner — Let AI Nag Your People",
   description:
     "Assign tasks to your partner, roommate, or coworker. Pick a nagging persona. They get reminded until it's done. Join the waitlist.",
-  metadataBase: new URL("https://naggingpartner.com"),
+  metadataBase: new URL("https://thenaggingpartner.com"),
   openGraph: {
     title: "The Nagging Partner — Let AI Nag Your People",
     description:

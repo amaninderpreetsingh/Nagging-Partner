@@ -22,13 +22,19 @@ export async function sendWaitlistConfirmation(
   }
 
   try {
-    await resend.emails.send({
-      from: "The Nagging Partner <onboarding@resend.dev>",
+    const { data, error } = await resend.emails.send({
+      from: "The Nagging Partner <waitlist@thenaggingpartner.com>",
       to: [to],
       subject:
         "You're in. Here's your spot on The Nagging Partner waitlist.",
       react: WaitlistConfirmation(props),
     });
+
+    if (error) {
+      console.error("[email] Resend error:", error);
+    } else {
+      console.log("[email] Sent confirmation to", to, "id:", data?.id);
+    }
   } catch (error) {
     console.error("[email] Failed to send confirmation:", error);
   }
