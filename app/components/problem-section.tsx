@@ -2,7 +2,7 @@ import ScrollAnimation from "./scroll-animation";
 
 export default function ProblemSection() {
   return (
-    <section className="py-20 md:py-28 bg-surface">
+    <section aria-label="The problem" className="py-20 md:py-28 bg-surface">
       <div className="max-w-[1200px] mx-auto px-6">
         <ScrollAnimation>
           <div className="max-w-2xl mx-auto text-center">

@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ waitlistCount, referralCode }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center py-12 md:py-20">
+    <section aria-label="Join the waitlist" className="relative min-h-screen flex items-center py-12 md:py-20">
       <div className="w-full max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Copy + Form */}

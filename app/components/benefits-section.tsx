@@ -24,7 +24,7 @@ interface BenefitsSectionProps {
 
 export default function BenefitsSection({ waitlistCount }: BenefitsSectionProps) {
   return (
-    <section className="py-20 md:py-28">
+    <section aria-label="Early access benefits" className="py-20 md:py-28">
       <div className="max-w-[1200px] mx-auto px-6">
         <ScrollAnimation>
           <div className="text-center mb-12">

@@ -26,7 +26,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 md:py-28 bg-surface">
+    <section aria-label="How it works" className="py-20 md:py-28 bg-surface">
       <div className="max-w-[1200px] mx-auto px-6">
         <ScrollAnimation>
           <div className="text-center mb-14">

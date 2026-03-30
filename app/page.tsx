@@ -6,6 +6,7 @@ import BenefitsSection from "./components/benefits-section";
 import FinalCTA from "./components/final-cta";
 import StickyMobileCTA from "./components/sticky-mobile-cta";
 import ScrollTracker from "./components/scroll-tracker";
+import Footer from "./components/footer";
 
 interface PageProps {
   searchParams: Promise<{ ref?: string }>;
@@ -39,7 +40,7 @@ export default async function Home({ searchParams }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <div className="grain-overlay" />
       <HeroSection waitlistCount={waitlistCount} referralCode={referralCode} />
       <ProblemSection />
@@ -47,6 +48,7 @@ export default async function Home({ searchParams }: PageProps) {
       <HowItWorks />
       <BenefitsSection waitlistCount={waitlistCount} />
       <FinalCTA waitlistCount={waitlistCount} referralCode={referralCode} />
+      <Footer />
       <StickyMobileCTA />
       <ScrollTracker />
     </main>

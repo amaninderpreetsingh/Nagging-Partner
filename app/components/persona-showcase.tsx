@@ -6,7 +6,7 @@ import ScrollAnimation from "./scroll-animation";
 
 export default function PersonaShowcase() {
   return (
-    <section className="py-20 md:py-28">
+    <section aria-label="AI nagging personas" className="py-20 md:py-28">
       <div className="max-w-[1200px] mx-auto px-6">
         <ScrollAnimation>
           <div className="text-center mb-12">

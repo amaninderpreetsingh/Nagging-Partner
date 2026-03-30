@@ -23,7 +23,7 @@ export async function sendWaitlistConfirmation(
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "The Nagging Partner <waitlist@thenaggingpartner.com>",
+      from: "The Nagging Partner <hello@waitlist.thenaggingpartner.com>",
       to: [to],
       subject:
         "You're in. Here's your spot on The Nagging Partner waitlist.",

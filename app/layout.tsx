@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og",
         width: 1200,
         height: 630,
         alt: "The Nagging Partner",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "The Nagging Partner — Let AI Nag Your People",
     description:
       "Assign tasks. Pick a persona. They get nagged until it's done.",
-    images: ["/og-image.png"],
+    images: ["/og"],
   },
 };
 
@@ -54,6 +54,12 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased`}
     >
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg"
+        >
+          Skip to content
+        </a>
         {children}
         <Analytics />
       </body>
