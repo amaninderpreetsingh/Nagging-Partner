@@ -1,7 +1,6 @@
 "use client";
 
-import { personas } from "@/app/data/personas";
-import PersonaCard from "./persona-card";
+import PersonaTimeline from "./persona-timeline";
 import ScrollAnimation from "./scroll-animation";
 
 export default function PersonaShowcase() {
@@ -11,22 +10,18 @@ export default function PersonaShowcase() {
         <ScrollAnimation>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Pick your <span className="text-accent">nagger</span>
+              Meet your <span className="text-accent">naggers</span>
             </h2>
             <p className="text-lg text-text-secondary max-w-lg mx-auto">
-              Each persona has a unique voice — and they get meaner the longer
-              you wait.
+              Three AI personas. One mission. Slide the timeline to see how
+              they escalate from friendly to furious.
             </p>
           </div>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {personas.map((persona, i) => (
-            <ScrollAnimation key={persona.id} delay={i * 0.15}>
-              <PersonaCard persona={persona} />
-            </ScrollAnimation>
-          ))}
-        </div>
+        <ScrollAnimation>
+          <PersonaTimeline />
+        </ScrollAnimation>
       </div>
     </section>
   );

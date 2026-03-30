@@ -122,6 +122,14 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 256px 256px;
 }
 
+/* Range slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--thumb-color, #FF6B35);
+}
+input[type="range"]::-moz-range-thumb {
+  background-color: var(--thumb-color, #FF6B35);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
