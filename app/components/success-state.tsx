@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import { trackEvent } from "@/app/lib/analytics";
 
 interface SuccessStateProps {
   position: number;
@@ -20,7 +21,12 @@ export default function SuccessState({
   const handleCopy = async () => {
     await navigator.clipboard.writeText(referralUrl);
     setCopied(true);
+    trackEvent({ name: "share_click", properties: { platform: "copy_link" } });
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleShareClick = (platform: "twitter" | "whatsapp" | "imessage") => {
+    trackEvent({ name: "share_click", properties: { platform } });
   };
 
   const shareLinks = {
@@ -58,6 +64,7 @@ export default function SuccessState({
           href={shareLinks.twitter}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => handleShareClick("twitter")}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm text-text-primary hover:bg-surface-hover transition-colors"
           aria-label="Share on Twitter"
         >
@@ -67,6 +74,7 @@ export default function SuccessState({
           href={shareLinks.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => handleShareClick("whatsapp")}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm text-text-primary hover:bg-surface-hover transition-colors"
           aria-label="Share on WhatsApp"
         >
@@ -74,6 +82,7 @@ export default function SuccessState({
         </a>
         <a
           href={shareLinks.sms}
+          onClick={() => handleShareClick("imessage")}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm text-text-primary hover:bg-surface-hover transition-colors"
           aria-label="Share via iMessage"
         >

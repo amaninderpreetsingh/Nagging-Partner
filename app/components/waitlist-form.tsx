@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import SuccessState from "./success-state";
+import { trackEvent } from "@/app/lib/analytics";
 
 interface WaitlistFormProps {
   variant: "hero" | "footer";
@@ -70,9 +71,11 @@ export default function WaitlistForm({
         if (res.status === 429) {
           setFormState("error");
           setErrorMessage(data.error || "Too many attempts. Please try again later.");
+          trackEvent({ name: "form_error", properties: { type: "rate_limit" } });
         } else {
           setFormState("error");
           setErrorMessage(data.error || "Something went wrong. Please try again.");
+          trackEvent({ name: "form_error", properties: { type: "server_error" } });
         }
         return;
       }
@@ -84,12 +87,17 @@ export default function WaitlistForm({
           referralCode: data.referralCode,
           referralUrl: data.referralUrl,
         });
+        trackEvent({ name: "form_error", properties: { type: "duplicate" } });
       } else {
         setFormState("success");
         setSuccessData({
           position: data.position,
           referralCode: data.referralCode,
           referralUrl: data.referralUrl,
+        });
+        trackEvent({
+          name: "waitlist_signup",
+          properties: { referralSource: referralCode || undefined },
         });
       }
     } catch {

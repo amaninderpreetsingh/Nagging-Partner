@@ -5,6 +5,7 @@ import HowItWorks from "./components/how-it-works";
 import BenefitsSection from "./components/benefits-section";
 import FinalCTA from "./components/final-cta";
 import StickyMobileCTA from "./components/sticky-mobile-cta";
+import ScrollTracker from "./components/scroll-tracker";
 
 interface PageProps {
   searchParams: Promise<{ ref?: string }>;
@@ -47,6 +48,7 @@ export default async function Home({ searchParams }: PageProps) {
       <BenefitsSection waitlistCount={waitlistCount} />
       <FinalCTA waitlistCount={waitlistCount} referralCode={referralCode} />
       <StickyMobileCTA />
+      <ScrollTracker />
     </main>
   );
 }
