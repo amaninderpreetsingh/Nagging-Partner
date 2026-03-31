@@ -41,7 +41,7 @@ export const personas: Persona[] = [
         text: "I didn't raise you to live like this. Your grandfather is rolling in his grave. TAKE. OUT. THE. TRASH.",
       },
       {
-        label: "Day 10+",
+        label: "Overdue",
         tone: "nuclear",
         text: "That's IT. I'm calling your mother. And your aunt. And Father Michael. We're having an INTERVENTION about your trash situation. I hope you're PROUD.",
       },
@@ -76,7 +76,7 @@ export const personas: Persona[] = [
         text: "I just find it SO interesting that you have time to scroll TikTok for 3 hours but can't spend 10 minutes on dishes. Really says a lot about your PRIORITIES.",
       },
       {
-        label: "Day 10+",
+        label: "Overdue",
         tone: "nuclear",
         text: "I told my therapist about the dishes and even SHE gasped. She said 'that's a red flag' and I said 'I KNOW.' Do the dishes or I'm posting about this. WITH screenshots.",
       },
@@ -111,7 +111,7 @@ export const personas: Persona[] = [
         text: "DROP AND GIVE ME A CLEAN BATHROOM! This is UNACCEPTABLE. You are a DISGRACE to this household! MOVE MOVE MOVE!",
       },
       {
-        label: "Day 10+",
+        label: "Overdue",
         tone: "nuclear",
         text: "I have NEVER in my 30 YEARS of service seen such MONUMENTAL INCOMPETENCE. You can't clean ONE BATHROOM?! Report for LATRINE DUTY — EVERY ROOM IN THE HOUSE. THAT IS AN ORDER!",
       },

@@ -68,7 +68,7 @@ export default function PersonaCard({ persona }: PersonaCardProps) {
               >
                 {msg.label}
               </span>
-              {msg.label !== "Day 10+" && (
+              {msg.label !== "Overdue" && (
                 <div className="w-px h-full bg-border mt-1" />
               )}
             </div>

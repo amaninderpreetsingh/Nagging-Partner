@@ -10,7 +10,7 @@ const timePoints = [
   { label: "Day 3", sublabel: "Gentle nudge", index: 1 },
   { label: "Day 5", sublabel: "Getting impatient", index: 2 },
   { label: "Last Day", sublabel: "Full rage mode", index: 3 },
-  { label: "Day 10+", sublabel: "Nuclear meltdown", index: 4 },
+  { label: "Overdue", sublabel: "Nuclear meltdown", index: 4 },
 ];
 
 const toneStyles = {
