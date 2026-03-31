@@ -23,6 +23,7 @@ dist/
 build/
 
 # Spec workflow state (regenerated)
+.claude
 .claude/specs/*/tasks-generated/
 
 # Debug
