@@ -129,8 +129,8 @@ export default function PersonaTimeline() {
                     <div
                       className="w-2.5 h-2.5 rounded-full border-2 transition-all duration-300"
                       style={{
-                        backgroundColor: isPast ? toneColors[Math.min(i, timeIndex)] : "#0a0a0a",
-                        borderColor: isPast ? toneColors[Math.min(i, timeIndex)] : "#262626",
+                        backgroundColor: isPast ? toneColors[Math.min(i, timeIndex)] : "var(--dot-inactive-bg)",
+                        borderColor: isPast ? toneColors[Math.min(i, timeIndex)] : "var(--dot-inactive-border)",
                       }}
                     />
                   </div>
@@ -140,8 +140,9 @@ export default function PersonaTimeline() {
 
             {/* Thumb */}
             <SliderPrimitive.Thumb
-              className="block w-7 h-7 rounded-full border-[3px] border-white cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 transition-shadow duration-300"
+              className="block w-7 h-7 rounded-full border-[3px] shadow-md cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 transition-shadow duration-300"
               style={{
+                borderColor: "var(--thumb-border)",
                 backgroundColor: currentColor,
                 boxShadow: `0 0 20px ${currentColor}50, 0 0 8px ${currentColor}30, 0 2px 8px rgba(0,0,0,0.3)`,
               }}

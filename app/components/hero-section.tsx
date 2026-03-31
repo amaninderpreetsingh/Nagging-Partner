@@ -17,7 +17,7 @@ export default function HeroSection({
       className="relative min-h-[calc(100svh-2rem)] lg:min-h-screen flex items-center py-10 md:py-24 overflow-hidden"
     >
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/8 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">

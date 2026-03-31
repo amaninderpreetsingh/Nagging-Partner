@@ -163,7 +163,7 @@ export default function WaitlistModal({
           aria-label="Join the waitlist"
         >
           {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+          <div className="absolute inset-0 backdrop-blur-sm" style={{ backgroundColor: `rgba(0,0,0,var(--backdrop-opacity))` }} />
 
           {/* Modal content — slides up on mobile, scales in on desktop */}
           <motion.div
@@ -172,7 +172,12 @@ export default function WaitlistModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-            className="relative w-full sm:max-w-md bg-[#1c1c1c]/90 backdrop-blur-xl border border-white/[0.1] ring-1 ring-white/[0.05] rounded-2xl p-6 sm:p-8 shadow-[0_8px_80px_rgba(0,0,0,0.8)] max-h-[90svh] overflow-y-auto"
+            className="relative w-full sm:max-w-md backdrop-blur-xl rounded-2xl p-6 sm:p-8 max-h-[90svh] overflow-y-auto"
+            style={{
+              backgroundColor: "var(--modal-bg)",
+              border: `1px solid var(--modal-border)`,
+              boxShadow: `var(--modal-shadow), 0 0 0 1px var(--modal-ring)`,
+            }}
           >
             {/* Close button */}
             <button
@@ -235,7 +240,8 @@ export default function WaitlistModal({
                   disabled={formState === "loading"}
                   aria-invalid={!!validationError}
                   aria-describedby={validationError ? "modal-email-error" : undefined}
-                  className="w-full h-12 px-4 rounded-xl bg-white/[0.07] border border-white/[0.12] text-text-primary text-base placeholder:text-text-secondary/60 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-all disabled:opacity-50"
+                  className="w-full h-12 px-4 rounded-xl text-text-primary text-base placeholder:text-text-secondary/60 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-all disabled:opacity-50"
+                  style={{ backgroundColor: "var(--input-modal-bg)", borderWidth: "1px", borderStyle: "solid", borderColor: "var(--input-modal-border)" }}
                 />
                 {validationError && (
                   <p

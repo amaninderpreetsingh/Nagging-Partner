@@ -113,9 +113,10 @@ export default function HeroPhonePreview() {
                 onClick={() => handlePersonaSwitch(i)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                   isActive
-                    ? "bg-white/10 text-text-primary"
-                    : "text-text-secondary hover:text-text-primary hover:bg-white/5"
+                    ? "text-text-primary"
+                    : "text-text-secondary hover:text-text-primary"
                 }`}
+                style={{ backgroundColor: isActive ? "var(--tab-active-bg)" : undefined }}
               >
                 <span className="text-sm">{p.emoji}</span>
                 <span className="hidden sm:inline">{p.name.split(" ").pop()}</span>
