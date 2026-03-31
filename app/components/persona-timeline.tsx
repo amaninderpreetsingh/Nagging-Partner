@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Slider as SliderPrimitive } from "@base-ui/react/slider";
 import { personas } from "@/app/data/personas";
 
 const timePoints = [
@@ -58,10 +59,12 @@ const toneByIndex = [
   "nuclear",
 ] as const;
 
+const toneColors = toneByIndex.map((t) => toneStyles[t].color);
+
 export default function PersonaTimeline() {
   const [timeIndex, setTimeIndex] = useState(0);
   const [activePersona, setActivePersona] = useState(0);
-  const currentTime = timePoints[timeIndex];
+
   const currentTone = toneByIndex[timeIndex];
   const currentColor = toneStyles[currentTone].color;
 
@@ -69,98 +72,115 @@ export default function PersonaTimeline() {
     <div className="w-full">
       {/* Current state label */}
       <div className="text-center mb-4 md:mb-6">
-        <motion.div
-          key={timeIndex}
-          initial={{ opacity: 0, y: -5 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2"
-        >
-          <span
-            className="w-3 h-3 rounded-full"
-            style={{ backgroundColor: currentColor }}
-          />
-          <span className="text-base md:text-lg font-bold text-text-primary">
-            {currentTime.label}
-          </span>
-          <span className="text-base md:text-lg text-text-secondary">
-            — {currentTime.sublabel}
-          </span>
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={timeIndex}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+            className="inline-flex items-center gap-2"
+          >
+            <span
+              className="w-3 h-3 rounded-full transition-colors duration-300"
+              style={{ backgroundColor: currentColor }}
+            />
+            <span className="text-base md:text-lg font-bold text-text-primary">
+              {timePoints[timeIndex].label}
+            </span>
+            <span className="text-base md:text-lg text-text-secondary">
+              — {timePoints[timeIndex].sublabel}
+            </span>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Custom stepped progress bar */}
-      <div
-        className="max-w-sm md:max-w-lg mx-auto mb-6 md:mb-10 px-2"
-        role="radiogroup"
-        aria-label="Escalation timeline"
-      >
-        <div className="relative flex items-center justify-between">
-          {/* Track background */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 bg-border rounded-full" />
-          {/* Track fill */}
-          <motion.div
-            className="absolute top-1/2 left-0 h-1 -translate-y-1/2 rounded-full"
-            style={{ backgroundColor: currentColor }}
-            animate={{ width: `${(timeIndex / (timePoints.length - 1)) * 100}%` }}
-            transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-          />
+      {/* Base UI Slider — native drag, snap, keyboard, accessibility */}
+      <div className="max-w-sm md:max-w-lg mx-auto mb-6 md:mb-10 px-2">
+        <SliderPrimitive.Root
+          min={0}
+          max={4}
+          step={1}
+          value={timeIndex}
+          onValueChange={(val) => {
+            const v = typeof val === "number" ? val : val[0];
+            setTimeIndex(v);
+          }}
+          aria-label="Escalation timeline"
+          className="relative w-full"
+        >
+          <SliderPrimitive.Control className="relative flex w-full touch-none items-center select-none h-10 cursor-pointer">
+            <SliderPrimitive.Track className="relative w-full h-1.5 bg-border rounded-full">
+              {/* Colored fill indicator */}
+              <SliderPrimitive.Indicator
+                className="h-full rounded-full transition-colors duration-300"
+                style={{ backgroundColor: currentColor }}
+              />
 
-          {/* Step dots + labels */}
-          {timePoints.map((point, i) => {
-            const isActive = i === timeIndex;
-            const isPast = i <= timeIndex;
-            const stepColor = isPast
-              ? toneStyles[toneByIndex[Math.min(i, timeIndex)]].color
-              : undefined;
+              {/* Tick marks */}
+              {timePoints.map((_, i) => {
+                const isPast = i <= timeIndex;
+                const leftPercent = (i / 4) * 100;
+                return (
+                  <div
+                    key={i}
+                    className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none"
+                    style={{ left: `${leftPercent}%` }}
+                  >
+                    <div
+                      className="w-2.5 h-2.5 rounded-full border-2 transition-all duration-300"
+                      style={{
+                        backgroundColor: isPast ? toneColors[Math.min(i, timeIndex)] : "#0a0a0a",
+                        borderColor: isPast ? toneColors[Math.min(i, timeIndex)] : "#262626",
+                      }}
+                    />
+                  </div>
+                );
+              })}
+            </SliderPrimitive.Track>
 
-            return (
-              <button
-                key={point.label}
-                onClick={() => setTimeIndex(i)}
-                className="relative z-10 flex flex-col items-center gap-2 cursor-pointer group"
-                role="radio"
-                aria-checked={isActive}
-                aria-label={`${point.label}: ${point.sublabel}`}
-              >
-                {/* Dot */}
-                <motion.div
-                  className="rounded-full border-2 transition-colors"
-                  animate={{
-                    width: isActive ? 20 : 12,
-                    height: isActive ? 20 : 12,
-                    borderColor: isPast ? (stepColor ?? "#262626") : "#262626",
-                    backgroundColor: isPast
-                      ? isActive
-                        ? (stepColor ?? "#262626")
-                        : (stepColor ?? "#262626")
-                      : "#0a0a0a",
-                  }}
-                  transition={{ duration: 0.25 }}
-                  style={{
-                    boxShadow: isActive
-                      ? `0 0 12px ${currentColor}40`
-                      : "none",
-                  }}
-                />
-                {/* Label */}
-                <span
-                  className={`text-[10px] md:text-xs font-medium transition-colors whitespace-nowrap ${
-                    isActive
-                      ? "text-text-primary"
-                      : "text-text-secondary group-hover:text-text-primary"
-                  }`}
+            {/* Thumb */}
+            <SliderPrimitive.Thumb
+              className="block w-7 h-7 rounded-full border-[3px] border-white cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 transition-shadow duration-300"
+              style={{
+                backgroundColor: currentColor,
+                boxShadow: `0 0 20px ${currentColor}50, 0 0 8px ${currentColor}30, 0 2px 8px rgba(0,0,0,0.3)`,
+              }}
+            />
+          </SliderPrimitive.Control>
+
+          {/* Step labels */}
+          <div className="relative w-full mt-3">
+            {timePoints.map((point, i) => {
+              const isActive = i === timeIndex;
+              const leftPercent = (i / 4) * 100;
+              return (
+                <button
+                  key={point.label}
+                  onClick={() => setTimeIndex(i)}
+                  className="absolute -translate-x-1/2 cursor-pointer"
+                  style={{ left: `${leftPercent}%` }}
                 >
-                  {point.label}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+                  <span
+                    className={`text-[10px] md:text-xs font-medium transition-colors whitespace-nowrap ${
+                      isActive
+                        ? "text-text-primary"
+                        : "text-text-secondary hover:text-text-primary"
+                    }`}
+                  >
+                    {point.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </SliderPrimitive.Root>
+
+        {/* Spacer for labels */}
+        <div className="h-5" />
       </div>
 
       {/* ===== MOBILE: Tabbed persona selector ===== */}
       <div className="md:hidden">
-        {/* Persona tabs */}
         <div className="flex gap-2 mb-4 justify-center">
           {personas.map((persona, i) => {
             const message = persona.messages[timeIndex];
@@ -187,7 +207,6 @@ export default function PersonaTimeline() {
           })}
         </div>
 
-        {/* Single active card */}
         <AnimatePresence mode="wait">
           {(() => {
             const persona = personas[activePersona];
@@ -232,12 +251,12 @@ export default function PersonaTimeline() {
 
       {/* ===== DESKTOP: 3-column grid ===== */}
       <div className="hidden md:grid md:grid-cols-3 gap-4">
-        <AnimatePresence mode="wait">
-          {personas.map((persona, i) => {
-            const message = persona.messages[timeIndex];
-            const styles = toneStyles[message.tone];
+        {personas.map((persona, i) => {
+          const message = persona.messages[timeIndex];
+          const styles = toneStyles[message.tone];
 
-            return (
+          return (
+            <AnimatePresence mode="wait" key={persona.id}>
               <motion.div
                 key={`${persona.id}-${timeIndex}`}
                 initial={{ opacity: 0, y: 15, scale: 0.97 }}
@@ -268,15 +287,15 @@ export default function PersonaTimeline() {
                   </p>
                 </div>
               </motion.div>
-            );
-          })}
-        </AnimatePresence>
+            </AnimatePresence>
+          );
+        })}
       </div>
 
       {/* Hint */}
       <p className="text-center text-xs text-text-secondary mt-4 md:mt-6 opacity-60">
-        <span className="md:hidden">Tap a persona, then pick a day</span>
-        <span className="hidden md:inline">Click a day</span>
+        <span className="md:hidden">Drag the slider, then pick a persona</span>
+        <span className="hidden md:inline">Drag the slider</span>
         {" "}to see how messages escalate
       </p>
     </div>
