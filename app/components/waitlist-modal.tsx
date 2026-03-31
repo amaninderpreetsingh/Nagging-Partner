@@ -258,6 +258,9 @@ export default function WaitlistModal({
                   type="submit"
                   disabled={formState === "loading"}
                   className="w-full h-12 mt-3 rounded-xl bg-accent hover:bg-accent-hover active:scale-[0.98] text-white font-semibold text-base transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{ boxShadow: "var(--btn-shadow)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "var(--btn-shadow-hover)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "var(--btn-shadow)")}
                 >
                   {formState === "loading" ? (
                     <span className="flex items-center justify-center gap-2">

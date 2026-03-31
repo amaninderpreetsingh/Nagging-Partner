@@ -83,7 +83,8 @@ export default function HeroPhonePreview() {
   return (
     <div className="relative w-full max-w-sm">
       <div
-        className={`relative rounded-2xl border ${currentTone.border} bg-surface/80 backdrop-blur-sm shadow-xl ${currentTone.glow} transition-colors duration-500 overflow-hidden`}
+        className={`relative rounded-2xl border ${currentTone.border} bg-surface/80 backdrop-blur-sm ${currentTone.glow} transition-colors duration-500 overflow-hidden`}
+        style={{ boxShadow: "var(--card-shadow)" }}
       >
         {/* Task header */}
         <div className="px-5 pt-5 pb-3 border-b border-border/50">

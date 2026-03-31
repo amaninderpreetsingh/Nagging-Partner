@@ -221,7 +221,8 @@ export default function PersonaTimeline() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
-                className={`rounded-2xl border ${styles.border} bg-surface p-4 shadow-lg ${styles.glow}`}
+                className={`rounded-2xl border ${styles.border} bg-surface p-4 ${styles.glow}`}
+                style={{ boxShadow: "var(--card-shadow)" }}
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div
@@ -264,7 +265,8 @@ export default function PersonaTimeline() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.97 }}
                 transition={{ duration: 0.35, delay: i * 0.08 }}
-                className={`rounded-2xl border ${styles.border} bg-surface p-5 shadow-lg ${styles.glow}`}
+                className={`rounded-2xl border ${styles.border} bg-surface p-5 ${styles.glow}`}
+                style={{ boxShadow: "var(--card-shadow)" }}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div

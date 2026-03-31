@@ -69,7 +69,8 @@ export default function StickyMobileCTA({
       <div className="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 bg-background/95 backdrop-blur-sm border-t border-border md:hidden">
         <button
           onClick={() => setModalOpen(true)}
-          className="block w-full h-11 flex items-center justify-center rounded-xl bg-accent hover:bg-accent-hover text-white text-sm font-semibold transition-colors cursor-pointer"
+          className="block w-full h-11 flex items-center justify-center rounded-xl bg-accent hover:bg-accent-hover text-white text-sm font-semibold transition-all active:scale-[0.98] cursor-pointer"
+          style={{ boxShadow: "var(--btn-shadow)" }}
         >
           Get Early Access — It&apos;s Free
         </button>

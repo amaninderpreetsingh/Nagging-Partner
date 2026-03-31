@@ -45,6 +45,7 @@ export default function HeroSection({
                   <span
                     key={chip}
                     className="px-3 py-1.5 rounded-full bg-surface border border-border text-sm text-text-secondary"
+                    style={{ boxShadow: "var(--chip-shadow)" }}
                   >
                     {chip}
                   </span>

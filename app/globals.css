@@ -111,23 +111,49 @@
   --input-modal-border: rgba(255, 255, 255, 0.12);
   --dot-inactive-bg: #0a0a0a;
   --dot-inactive-border: #262626;
+  --chip-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 1px 2px rgba(0,0,0,0.5),
+    0 4px 8px rgba(0,0,0,0.4),
+    0 8px 16px rgba(0,0,0,0.3),
+    0 16px 32px rgba(0,0,0,0.15);
+  --btn-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    inset 0 -2px 0 rgba(0,0,0,0.15),
+    0 2px 4px rgba(0,0,0,0.4),
+    0 8px 16px rgba(0,0,0,0.3),
+    0 16px 32px rgba(255,107,53,0.4);
+  --btn-shadow-hover:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    inset 0 -2px 0 rgba(0,0,0,0.15),
+    0 4px 8px rgba(0,0,0,0.4),
+    0 12px 24px rgba(0,0,0,0.3),
+    0 24px 48px rgba(255,107,53,0.45);
+  --card-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 1px 2px rgba(0,0,0,0.5),
+    0 4px 8px rgba(0,0,0,0.4),
+    0 12px 24px rgba(0,0,0,0.3),
+    0 24px 48px rgba(0,0,0,0.2);
 }
 
 /* Light theme — warm, muted, easy on the eyes */
 .light {
-  --background: #E6E4DF;
+  --background: #DDDBD6;
   --foreground: #1A1A1A;
-  --surface: #EDEBE7;
-  --surface-hover: #E0DED9;
-  --card: #EDEBE7;
+  --surface: #E9E7E2;
+  --surface-hover: #D6D4CF;
+  --card: #E9E7E2;
   --card-foreground: #1A1A1A;
-  --popover: #EDEBE7;
+  --popover: #E9E7E2;
   --popover-foreground: #1A1A1A;
   --primary: #FF6B35;
   --primary-foreground: #FFFFFF;
-  --secondary: #DDDBD6;
+  --secondary: #D3D1CC;
   --secondary-foreground: #1A1A1A;
-  --muted: #DDDBD6;
+  --muted: #D3D1CC;
   --muted-foreground: #5C5C5C;
   --accent: #FF6B35;
   --accent-hover: #E8571F;
@@ -142,7 +168,7 @@
   --chart-3: #16A34A;
   --chart-4: #E8571F;
   --chart-5: #1A1A1A;
-  --sidebar: #EDEBE7;
+  --sidebar: #E9E7E2;
   --sidebar-foreground: #1A1A1A;
   --sidebar-primary: #FF6B35;
   --sidebar-primary-foreground: #FFFFFF;
@@ -155,15 +181,39 @@
   --backdrop-opacity: 0.35;
   --tab-active-bg: rgba(0, 0, 0, 0.06);
   --tab-hover-bg: rgba(0, 0, 0, 0.03);
-  --thumb-border: #EDEBE7;
-  --modal-bg: rgba(237, 235, 231, 0.95);
+  --thumb-border: #E9E7E2;
+  --modal-bg: rgba(218, 216, 211, 0.95);
   --modal-border: var(--border);
-  --modal-ring: rgba(0, 0, 0, 0.04);
-  --modal-shadow: 0 8px 60px rgba(0,0,0,0.1), 0 2px 12px rgba(0,0,0,0.06);
-  --input-modal-bg: var(--background);
-  --input-modal-border: var(--border);
-  --dot-inactive-bg: #E6E4DF;
+  --modal-ring: rgba(0, 0, 0, 0.06);
+  --modal-shadow: 0 8px 60px rgba(0,0,0,0.12), 0 2px 12px rgba(0,0,0,0.08);
+  --input-modal-bg: #D4D2CD;
+  --input-modal-border: #C0BEB9;
+  --dot-inactive-bg: #DDDBD6;
   --dot-inactive-border: #CCCAC5;
+  --chip-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 1px 2px rgba(0,0,0,0.1),
+    0 4px 8px rgba(0,0,0,0.08),
+    0 8px 16px rgba(0,0,0,0.06),
+    0 16px 32px rgba(0,0,0,0.04);
+  --btn-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -2px 0 rgba(0,0,0,0.08),
+    0 2px 4px rgba(0,0,0,0.12),
+    0 8px 16px rgba(0,0,0,0.08),
+    0 16px 32px rgba(255,107,53,0.15);
+  --btn-shadow-hover:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -2px 0 rgba(0,0,0,0.08),
+    0 4px 8px rgba(0,0,0,0.12),
+    0 8px 16px rgba(0,0,0,0.08),
+    0 16px 32px rgba(255,107,53,0.25);
+  --card-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 1px 2px rgba(0,0,0,0.08),
+    0 4px 8px rgba(0,0,0,0.06),
+    0 12px 24px rgba(0,0,0,0.05),
+    0 24px 48px rgba(0,0,0,0.04);
 }
 
 body {

@@ -3,7 +3,7 @@ import WaitlistCTAButton from "./waitlist-cta-button";
 
 const perks = [
   { emoji: "💎", text: "6 months free premium — no credit card" },
-  { emoji: "🔔", text: "You control how often they get nagged" },
+  { emoji: "🎭", text: "Exclusive early adopter pricing" },
   { emoji: "🏆", text: "Vote on new personas & features" },
 ];
 
