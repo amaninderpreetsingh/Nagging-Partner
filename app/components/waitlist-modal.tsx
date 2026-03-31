@@ -14,8 +14,7 @@ interface WaitlistModalProps {
 
 const perks = [
   { emoji: "💎", text: "All premium features free for 6 months" },
-  { emoji: "🔔", text: "Control how often they get nagged" },
-  { emoji: "🎭", text: "First pick of nagging personas" },
+  { emoji: "🎭", text: "Exclusive early adopter pricing" },
   { emoji: "🏆", text: "Vote on new personas & features" },
 ];
 
@@ -157,7 +156,7 @@ export default function WaitlistModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={handleBackdropClick}
           role="dialog"
           aria-modal="true"
@@ -173,7 +172,7 @@ export default function WaitlistModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-            className="relative w-full sm:max-w-md mx-0 sm:mx-4 bg-surface border border-border rounded-t-2xl sm:rounded-2xl p-6 sm:p-8 shadow-2xl max-h-[90svh] overflow-y-auto"
+            className="relative w-full sm:max-w-md bg-[#1c1c1c]/90 backdrop-blur-xl border border-white/[0.1] ring-1 ring-white/[0.05] rounded-2xl p-6 sm:p-8 shadow-[0_8px_80px_rgba(0,0,0,0.8)] max-h-[90svh] overflow-y-auto"
           >
             {/* Close button */}
             <button
