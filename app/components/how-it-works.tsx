@@ -20,7 +20,7 @@ const steps = [
     emoji: "🔔",
     title: "They get nagged",
     description:
-      "AI sends notifications in character. The longer they wait, the meaner it gets.",
+      "AI sends notifications in character. You control how often — and the longer they wait, the meaner it gets.",
   },
 ];
 

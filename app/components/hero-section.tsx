@@ -31,10 +31,11 @@ export default function HeroSection({
               </h1>
               <p className="text-lg sm:text-2xl text-text-secondary max-w-lg leading-relaxed">
                 Assign tasks to anyone. Pick a hilarious AI persona.
-                <span className="text-text-primary font-medium">
-                  {" "}
-                  They get reminded until it&apos;s done.
-                </span>
+                Nag them every{" "}
+                <span className="text-accent font-semibold">5 minutes</span>,{" "}
+                <span className="text-accent font-semibold">2 hours</span>, or{" "}
+                <span className="text-accent font-semibold">once a day</span>
+                {" "}— until it&apos;s done.
               </p>
             </div>
 
