@@ -1,8 +1,6 @@
 import HeroSection from "./components/hero-section";
-import ProblemSection from "./components/problem-section";
 import PersonaShowcase from "./components/persona-showcase";
 import HowItWorks from "./components/how-it-works";
-import BenefitsSection from "./components/benefits-section";
 import FinalCTA from "./components/final-cta";
 import StickyMobileCTA from "./components/sticky-mobile-cta";
 import ScrollTracker from "./components/scroll-tracker";
@@ -43,10 +41,8 @@ export default async function Home({ searchParams }: PageProps) {
     <main id="main-content" className="min-h-screen">
       <div className="grain-overlay" />
       <HeroSection waitlistCount={waitlistCount} referralCode={referralCode} />
-      <ProblemSection />
-      <PersonaShowcase />
       <HowItWorks />
-      <BenefitsSection waitlistCount={waitlistCount} />
+      <PersonaShowcase />
       <FinalCTA waitlistCount={waitlistCount} referralCode={referralCode} />
       <Footer />
       <StickyMobileCTA waitlistCount={waitlistCount} referralCode={referralCode} />
