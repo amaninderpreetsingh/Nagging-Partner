@@ -49,7 +49,7 @@ export default async function Home({ searchParams }: PageProps) {
       <BenefitsSection waitlistCount={waitlistCount} />
       <FinalCTA waitlistCount={waitlistCount} referralCode={referralCode} />
       <Footer />
-      <StickyMobileCTA />
+      <StickyMobileCTA waitlistCount={waitlistCount} referralCode={referralCode} />
       <ScrollTracker />
     </main>
   );

@@ -1,6 +1,6 @@
 export interface PersonaMessage {
   label: string;
-  tone: "friendly" | "impatient" | "angry";
+  tone: "friendly" | "nudging" | "impatient" | "angry" | "nuclear";
   text: string;
 }
 
@@ -27,42 +27,62 @@ export const personas: Persona[] = [
       },
       {
         label: "Day 3",
+        tone: "nudging",
+        text: "I made you a casserole once and you didn't even wash the dish. That trash is still there, isn't it?",
+      },
+      {
+        label: "Day 5",
         tone: "impatient",
         text: "I'm not saying you're lazy, dear, but the trash has been there longer than my hip replacement recovery.",
       },
       {
-        label: "Overdue",
+        label: "Last Day",
         tone: "angry",
         text: "I didn't raise you to live like this. Your grandfather is rolling in his grave. TAKE. OUT. THE. TRASH.",
+      },
+      {
+        label: "Day 10+",
+        tone: "nuclear",
+        text: "That's IT. I'm calling your mother. And your aunt. And Father Michael. We're having an INTERVENTION about your trash situation. I hope you're PROUD.",
       },
     ],
     altMessage:
       "Back in my day, we didn't need apps to remind us. We had SHAME.",
   },
   {
-    id: "irish",
-    name: "Drunk Irish Guy",
-    emoji: "🍺",
-    description: "Chaotic encouragement with zero filter",
+    id: "drama-queen",
+    name: "Drama Queen Ex",
+    emoji: "💅",
+    description: "Passive-aggressive theatrics and emotional warfare",
     messages: [
       {
         label: "Day 1",
         tone: "friendly",
-        text: "Oi mate! Just a wee reminder to do the dishes. No rush, but like... do 'em.",
+        text: "Hey babe, just a reminder about the dishes. No biggie. I'm totally fine. It's whatever.",
       },
       {
         label: "Day 3",
-        tone: "impatient",
-        text: "Listen here ya gobshite, those dishes aren't gonna wash themselves. I've had three pints waitin' on ya!",
+        tone: "nudging",
+        text: "Oh the dishes are still there? Cool cool cool. I mean I would've done them by now but that's just ME I guess.",
       },
       {
-        label: "Overdue",
+        label: "Day 5",
+        tone: "impatient",
+        text: "You know what, I'm not even mad about the dishes. I'm DISAPPOINTED. There's a difference. Google it.",
+      },
+      {
+        label: "Last Day",
         tone: "angry",
-        text: "RIGHT. I've had enough of yer nonsense! Me nan could do the dishes faster and she's been DEAD for twelve years!",
+        text: "I just find it SO interesting that you have time to scroll TikTok for 3 hours but can't spend 10 minutes on dishes. Really says a lot about your PRIORITIES.",
+      },
+      {
+        label: "Day 10+",
+        tone: "nuclear",
+        text: "I told my therapist about the dishes and even SHE gasped. She said 'that's a red flag' and I said 'I KNOW.' Do the dishes or I'm posting about this. WITH screenshots.",
       },
     ],
     altMessage:
-      "I swear on me mother's grave — and she's still alive — DO IT NOW.",
+      "I'm not being dramatic, YOU'RE being dramatic by NOT doing it.",
   },
   {
     id: "sergeant",
@@ -77,13 +97,23 @@ export const personas: Persona[] = [
       },
       {
         label: "Day 3",
+        tone: "nudging",
+        text: "This is your SECOND reminder, Private. I don't enjoy repeating myself. The bathroom. NOW would be ideal.",
+      },
+      {
+        label: "Day 5",
         tone: "impatient",
         text: "I said EARLIEST CONVENIENCE, not WHENEVER YOU FEEL LIKE IT. That bathroom isn't going to clean itself, PRIVATE.",
       },
       {
-        label: "Overdue",
+        label: "Last Day",
         tone: "angry",
         text: "DROP AND GIVE ME A CLEAN BATHROOM! This is UNACCEPTABLE. You are a DISGRACE to this household! MOVE MOVE MOVE!",
+      },
+      {
+        label: "Day 10+",
+        tone: "nuclear",
+        text: "I have NEVER in my 30 YEARS of service seen such MONUMENTAL INCOMPETENCE. You can't clean ONE BATHROOM?! Report for LATRINE DUTY — EVERY ROOM IN THE HOUSE. THAT IS AN ORDER!",
       },
     ],
     altMessage:

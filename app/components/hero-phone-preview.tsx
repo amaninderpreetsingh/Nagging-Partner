@@ -4,15 +4,17 @@ import { motion, useReducedMotion } from "motion/react";
 import { personas } from "@/app/data/personas";
 
 const notifications = [
-  { persona: personas[2], messageIndex: 2, time: "11:58 PM" },
-  { persona: personas[1], messageIndex: 1, time: "2:47 PM" },
+  { persona: personas[2], messageIndex: 3, time: "11:58 PM" },
+  { persona: personas[1], messageIndex: 2, time: "2:47 PM" },
   { persona: personas[0], messageIndex: 0, time: "9:00 AM" },
 ];
 
 const toneColors = {
   friendly: "border-success/30",
+  nudging: "border-emerald-300/30",
   impatient: "border-yellow-400/30",
   angry: "border-error/30",
+  nuclear: "border-red-500/40",
 };
 
 export default function HeroPhonePreview() {

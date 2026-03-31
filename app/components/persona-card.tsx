@@ -10,14 +10,18 @@ interface PersonaCardProps {
 
 const toneColors = {
   friendly: "text-success",
+  nudging: "text-emerald-300",
   impatient: "text-yellow-400",
   angry: "text-error",
+  nuclear: "text-red-400",
 };
 
 const toneBg = {
   friendly: "bg-success/10",
+  nudging: "bg-emerald-300/10",
   impatient: "bg-yellow-400/10",
   angry: "bg-error/10",
+  nuclear: "bg-red-600/15",
 };
 
 export default function PersonaCard({ persona }: PersonaCardProps) {
@@ -64,7 +68,7 @@ export default function PersonaCard({ persona }: PersonaCardProps) {
               >
                 {msg.label}
               </span>
-              {msg.label !== "Overdue" && (
+              {msg.label !== "Day 10+" && (
                 <div className="w-px h-full bg-border mt-1" />
               )}
             </div>
