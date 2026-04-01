@@ -83,7 +83,7 @@ export default function HeroPhonePreview() {
   return (
     <div className="relative w-full max-w-sm">
       <div
-        className={`relative rounded-2xl border ${currentTone.border} bg-surface/80 backdrop-blur-sm ${currentTone.glow} transition-colors duration-500 overflow-hidden`}
+        className={`relative rounded-2xl border ${currentTone.border} bg-surface ${currentTone.glow} transition-colors duration-500 overflow-hidden`}
         style={{ boxShadow: "var(--card-shadow)" }}
       >
         {/* Task header */}
@@ -134,10 +134,10 @@ export default function HeroPhonePreview() {
               return (
                 <motion.div
                   key={`${persona.id}-${i}`}
-                  initial={{ opacity: 0, y: 12, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
                   className="mt-2.5"
                 >
                   <div

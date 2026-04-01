@@ -163,7 +163,7 @@ export default function WaitlistModal({
           aria-label="Join the waitlist"
         >
           {/* Backdrop */}
-          <div className="absolute inset-0 backdrop-blur-sm" style={{ backgroundColor: `rgba(0,0,0,var(--backdrop-opacity))` }} />
+          <div className="absolute inset-0" style={{ backgroundColor: `rgba(0,0,0,var(--backdrop-opacity))` }} />
 
           {/* Modal content — slides up on mobile, scales in on desktop */}
           <motion.div
@@ -172,7 +172,7 @@ export default function WaitlistModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-            className="relative w-full sm:max-w-md backdrop-blur-xl rounded-2xl p-6 sm:p-8 max-h-[90svh] overflow-y-auto"
+            className="relative w-full sm:max-w-md rounded-2xl p-6 sm:p-8 max-h-[90svh] overflow-y-auto"
             style={{
               backgroundColor: "var(--modal-bg)",
               border: `1px solid var(--modal-border)`,

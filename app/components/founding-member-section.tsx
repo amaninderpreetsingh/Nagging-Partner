@@ -22,8 +22,8 @@ export default function FoundingMemberSection({ foundingMemberCount = 0 }: Found
 
   return (
     <section id="founding-member" className="py-14 md:py-28 bg-background relative overflow-hidden">
-      {/* Subtle glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/6 rounded-full blur-[100px] pointer-events-none" />
+      {/* Subtle glow — smaller on mobile for GPU performance */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[600px] md:h-[600px] bg-accent/6 rounded-full blur-[50px] md:blur-[100px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         <ScrollAnimation>
