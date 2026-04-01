@@ -1,6 +1,8 @@
 import HeroSection from "./components/hero-section";
 import PersonaShowcase from "./components/persona-showcase";
 import HowItWorks from "./components/how-it-works";
+import FoundingMemberSection from "./components/founding-member-section";
+import FAQSection from "./components/faq-section";
 import FinalCTA from "./components/final-cta";
 import StickyMobileCTA from "./components/sticky-mobile-cta";
 import ScrollTracker from "./components/scroll-tracker";
@@ -43,6 +45,8 @@ export default async function Home({ searchParams }: PageProps) {
       <HeroSection waitlistCount={waitlistCount} referralCode={referralCode} />
       <HowItWorks />
       <PersonaShowcase />
+      <FoundingMemberSection />
+      <FAQSection />
       <FinalCTA waitlistCount={waitlistCount} referralCode={referralCode} />
       <Footer />
       <StickyMobileCTA waitlistCount={waitlistCount} referralCode={referralCode} />

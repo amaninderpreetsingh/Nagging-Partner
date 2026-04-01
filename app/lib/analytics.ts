@@ -14,7 +14,8 @@ type AnalyticsEvent =
       properties: {
         type: "validation" | "duplicate" | "server_error" | "rate_limit";
       };
-    };
+    }
+  | { name: "founding_member_checkout"; properties: { email: string } };
 
 export function trackEvent(event: AnalyticsEvent) {
   try {
