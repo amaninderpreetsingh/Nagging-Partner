@@ -7,7 +7,7 @@ Generate a batch of ad copy for The Nagging Partner across all personas and form
 /generate-ads [persona] [format] [scenario]
 ```
 
-- `persona` (optional): grandma, sergeant, dramaqueen, or all (default: all)
+- `persona` (optional): any persona name from the library, or "random" to pick 3 at random (default: random)
 - `format` (optional): hooks, captions, messages, scripts, or all (default: all)
 - `scenario` (optional): dishes, trash, laundry, errands, or custom (default: random mix)
 
@@ -21,26 +21,9 @@ The Nagging Partner is a humor-driven app that lets users assign tasks and nag p
 
 ## Personas
 
-### Old Grandma
-- Voice: Passive-aggressive love, guilt trips, references to "your grandfather," escalates from sweet to savage
-- Example escalation:
-  - Level 1: "Sweetie, I noticed the dishes are still there. No rush!"
-  - Level 3: "Your grandfather never left dishes in the sink. God rest his soul."
-  - Level 5: "I made you from SCRATCH and you can't wash a PLATE?"
+**IMPORTANT:** Read the full persona library at `docs/personas.md`. It contains 20 personas with voice descriptions and escalation examples.
 
-### Military Sergeant
-- Voice: Drill instructor, zero tolerance, ALL CAPS energy, military time, escalates from orders to existential insults
-- Example escalation:
-  - Level 1: "TASK ASSIGNED: Take out the trash. You have 2 hours. Move it."
-  - Level 3: "I've seen combat zones cleaner than your kitchen. MOVE."
-  - Level 5: "You are a DISGRACE to this household. The RACCOONS are judging you."
-
-### Drama Queen Ex
-- Voice: Theatrical disappointment, emotional manipulation, ALL about the drama, escalates from passive to full meltdown
-- Example escalation:
-  - Level 1: "So... you're just gonna leave those dishes there? Cool cool cool."
-  - Level 3: "I'm not being dramatic, YOU'RE being dramatic by NOT doing it."
-  - Level 5: "I gave you EVERYTHING and you can't even take out the TRASH?!"
+**Pick 3 personas per batch.** If the user specifies a persona by name, use that one. If they say "random" or don't specify, pick 3 interesting/contrasting personas from the library that haven't been used recently. Vary your picks each batch — don't always default to the same 3.
 
 ## Output Format
 

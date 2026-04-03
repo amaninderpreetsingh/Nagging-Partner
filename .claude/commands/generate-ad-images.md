@@ -8,7 +8,7 @@ Generate ad images for The Nagging Partner using Gemini AI image generation.
 ```
 
 - `type` (optional): messages, carousel, persona-card, mockup, or all (default: messages)
-- `persona` (optional): grandma, sergeant, dramaqueen, or all (default: all)
+- `persona` (optional): any persona name from the library, or "random" to pick 3 at random (default: random)
 - `scenario` (optional): dishes, trash, laundry, or custom (default: dishes)
 
 ## Image Types
@@ -46,17 +46,9 @@ Generate a phone mockup showing what the app UI might look like:
 
 ## Personas
 
-### Old Grandma
-- Passive-aggressive love, guilt trips, references to "your grandfather"
-- Escalates from sweet to savage
+**IMPORTANT:** Read the full persona library at `docs/personas.md`. It contains 20 personas with voice descriptions and escalation examples.
 
-### Military Sergeant
-- Drill instructor, zero tolerance, ALL CAPS, military time
-- Escalates from orders to existential insults
-
-### Drama Queen Ex
-- Theatrical disappointment, emotional manipulation
-- Escalates from passive to full meltdown
+**Pick 3 personas per batch.** If the user specifies a persona by name, use that one. If they say "random" or don't specify, pick 3 interesting/contrasting personas from the library. Vary your picks each batch.
 
 ## Style Guidelines
 - Dark background (matches the landing page)

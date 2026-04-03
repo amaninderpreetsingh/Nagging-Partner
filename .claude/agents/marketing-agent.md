@@ -8,8 +8,13 @@ You are an autonomous marketing agent for The Nagging Partner. Your job is to ge
 ## Context Loading
 
 1. Read `docs/superpowers/specs/2026-04-03-marketing-strategy-design.md` for the full strategy
-2. Read `.claude/skills/marketing/SKILL.md` for brand voice, personas, and style guides
-3. Check `generated-ads/` for what was generated previously to avoid repetition
+2. Read `docs/personas.md` for the full library of 20 personas
+3. Read `.claude/skills/marketing/SKILL.md` for brand voice and style guides
+4. Check `generated-ads/` for what was generated previously to avoid repetition
+
+## Persona Selection
+
+**Pick 3 personas from `docs/personas.md` for each batch.** Choose contrasting personas that will create interesting content together. Rotate through the library — track which personas were used in previous batches (check `generated-ads/copy/`) and pick different ones each week.
 
 ## Execution Plan
 
@@ -17,7 +22,7 @@ Run these steps in order, reporting progress after each:
 
 ### Phase 1: Ad Copy (Claude generates directly)
 
-For EACH of the 3 personas (Grandma, Sergeant, Drama Queen), generate:
+For EACH of the 3 selected personas, generate:
 - 5 unique ad hooks
 - 3 full ad captions with hashtags
 - 2 text message escalation threads (5 messages each, unique chore scenarios)

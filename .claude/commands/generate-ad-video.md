@@ -8,7 +8,7 @@ Generate short video ads for The Nagging Partner using Gemini Veo video generati
 ```
 
 - `type` (optional): notification, skit, testimonial (default: notification)
-- `persona` (optional): grandma, sergeant, dramaqueen (default: grandma)
+- `persona` (optional): any persona name from the library, or "random" (default: random)
 
 ## Video Types
 
@@ -39,17 +39,9 @@ Prompt guidance for Gemini:
 
 ## Personas
 
-### Old Grandma
-- Passive-aggressive love, guilt trips, "your grandfather" references
-- Escalates from sweet to savage
+**IMPORTANT:** Read the full persona library at `docs/personas.md`. It contains 20 personas with voice descriptions and escalation examples.
 
-### Military Sergeant
-- Drill instructor, ALL CAPS, military time, zero tolerance
-- Escalates from orders to existential insults
-
-### Drama Queen Ex
-- Theatrical disappointment, emotional manipulation
-- Escalates from passive to full meltdown
+**Pick 1 persona per video.** If the user specifies a persona, use that one. If "random," pick one that's visually/comedically interesting for video format.
 
 ## Technical Requirements
 - Format: 9:16 portrait (TikTok/Reels optimized)

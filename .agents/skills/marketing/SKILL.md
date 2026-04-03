@@ -19,11 +19,11 @@ Read `docs/superpowers/specs/2026-04-03-marketing-strategy-design.md` for the fu
 - The personas sell themselves — they ARE the content
 - Never corporate, never generic, never "AI slop"
 
-## The Three Personas
+## Personas
 
-1. **Old Grandma** — Passive-aggressive love, guilt trips, "your grandfather" references
-2. **Military Sergeant** — Drill instructor, ALL CAPS, military time, zero tolerance
-3. **Drama Queen Ex** — Theatrical disappointment, emotional manipulation, full meltdown energy
+**Read `docs/personas.md` for the full library of 20 personas** with voice descriptions and escalation examples.
+
+**Pick 3 personas per weekly batch.** Rotate through the library — don't always default to the same 3. Pick contrasting personas that will make interesting content together (e.g., Disappointed Dad + Viking Warrior + Telenovela Star).
 
 ## Available Tools
 
