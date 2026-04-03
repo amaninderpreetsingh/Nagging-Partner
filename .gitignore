@@ -26,6 +26,9 @@ build/
 .claude
 .claude/specs/*/tasks-generated/
 
+# Generated ad creatives
+generated-ads/
+
 # Debug
 *.log
 npm-debug.log*
