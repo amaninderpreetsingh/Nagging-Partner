@@ -43,6 +43,8 @@ Prompt guidance for Gemini:
 
 **Pick 1 persona per video.** If the user specifies a persona, use that one. If "random," pick one that's visually/comedically interesting for video format.
 
+**The escalation examples in the persona file are just tone samples — never copy them verbatim.** Write fresh, original dialogue for every video.
+
 ## Technical Requirements
 - Format: 9:16 portrait (TikTok/Reels optimized)
 - Duration: 8 seconds (Veo 3.1 max)

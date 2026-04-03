@@ -25,6 +25,8 @@ The Nagging Partner is a humor-driven app that lets users assign tasks and nag p
 
 **Pick 3 personas per batch.** If the user specifies a persona by name, use that one. If they say "random" or don't specify, pick 3 interesting/contrasting personas from the library that haven't been used recently. Vary your picks each batch — don't always default to the same 3.
 
+**The escalation examples in the persona file are just tone samples — never copy them verbatim.** Write fresh, original lines every time that capture the same voice and energy.
+
 ## Output Format
 
 Generate the following for each persona requested:

@@ -2,6 +2,8 @@
 
 Pick any 3 personas from this list for ad campaigns, content batches, or product features. Each persona has a distinct voice that escalates from mild to nuclear.
 
+**IMPORTANT:** The Level 1/3/5 examples below are just samples to show the tone and escalation style. Do NOT copy them verbatim — write fresh, original lines every time that capture the same voice and energy. The examples exist to show *how* each persona sounds, not *what* they say.
+
 ---
 
 ## 1. Old Grandma

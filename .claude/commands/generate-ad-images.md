@@ -50,6 +50,8 @@ Generate a phone mockup showing what the app UI might look like:
 
 **Pick 3 personas per batch.** If the user specifies a persona by name, use that one. If they say "random" or don't specify, pick 3 interesting/contrasting personas from the library. Vary your picks each batch.
 
+**The escalation examples in the persona file are just tone samples — never copy them verbatim.** Write fresh, original message text for every image.
+
 ## Style Guidelines
 - Dark background (matches the landing page)
 - Orange accent color (#F97316)

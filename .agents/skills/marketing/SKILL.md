@@ -25,6 +25,8 @@ Read `docs/superpowers/specs/2026-04-03-marketing-strategy-design.md` for the fu
 
 **Pick 3 personas per weekly batch.** Rotate through the library — don't always default to the same 3. Pick contrasting personas that will make interesting content together (e.g., Disappointed Dad + Viking Warrior + Telenovela Star).
 
+**The escalation examples in the persona file are just tone samples — never copy them verbatim.** Always write fresh, original lines that capture the same voice and energy.
+
 ## Available Tools
 
 You have these Gemini MCP tools available:
